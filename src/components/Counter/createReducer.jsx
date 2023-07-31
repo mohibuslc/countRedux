@@ -6,7 +6,7 @@ import { DECREMENT, INCREMENT } from "./actionType"
 
 const initialState = {
 
-    value: 0 , 
+    value: 23 , 
 
 };
 const countReducer=(state= initialState , action)=>{
