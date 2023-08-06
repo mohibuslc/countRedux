@@ -3,11 +3,12 @@
 // Develop store 
 
 import {createStore} from 'redux';
+import rootReducer from './rootReducer';
 
 
-import createReducer from '../Counter/createReducer';
 
-const store = createStore(createReducer); 
+
+const store = createStore(rootReducer); 
 
 
 export default store ; 

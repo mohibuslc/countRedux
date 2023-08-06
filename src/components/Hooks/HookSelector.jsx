@@ -3,19 +3,36 @@
 // CounterApp use of HookuseSelector();
 
 
-import {  useSelector } from 'react-redux';
-// import { increment, decrement } from './Counter/action';
+import { useDispatch, useSelector } from 'react-redux';
 
-function HookSelector({id}) {
+import { decrement, increment } from '../Counter/action';
 
-    const count = useSelector((state)=>state.value)
-    return (
-        <div>
-            <h1>{count}-{id}</h1>
-            {/* <button onClick={increment}>Increment</button>
-            <button onClick={decrement}>Decrement</button> */}
-        </div>
-    );
+
+function HookSelector() {
+
+  const count = useSelector((state) => state.count.value)
+
+  const dispatch = useDispatch();
+
+  function incrementHandler() {
+
+    dispatch(increment());
+
+  }
+
+  function decrementHandler() {
+
+    dispatch(decrement())
+  }
+
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={incrementHandler}>Increment</button>
+      <button onClick={ decrementHandler}>Decrement</button>
+    </div>
+  );
 }
 
 // const mapStateToProps = (state , owenProps) => {

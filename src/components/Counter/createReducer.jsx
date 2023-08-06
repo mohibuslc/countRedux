@@ -6,32 +6,32 @@ import { DECREMENT, INCREMENT } from "./actionType"
 
 const initialState = {
 
-    value: 23 , 
+    value: 19,
 
 };
-const countReducer=(state= initialState , action)=>{
+const countReducer = (state = initialState, action) => {
 
-    switch(action.type){
+    switch (action.type) {
 
         case INCREMENT:
-            return{
+            return {
 
-                ...state, 
-                value: state.value +1 
+                ...state,
+                value: state.value + 1
             };
 
-            case DECREMENT :
+        case DECREMENT:
 
-            return{
+            return {
 
-                ...state, 
-                value: state.value -1
+                ...state,
+                value: state.value - 1
             }
 
-            default:
+        default:
 
             return state
     }
 }
 
-export default countReducer ; 
+export default countReducer; 
